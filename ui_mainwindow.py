@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'mainwindow.ui',
 # licensing of 'mainwindow.ui' applies.
 #
-# Created: Thu Sep 19 10:39:38 2019
+# Created: Thu Sep 19 10:51:07 2019
 #      by: pyside2-uic  running on PySide2 5.12.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,10 +26,6 @@ class Ui_MainWindow(object):
         self.comboBox.setObjectName("comboBox")
         self.gridLayout.addWidget(self.comboBox, 0, 0, 1, 1)
         self.gridLayout_2.addWidget(self.groupBox, 0, 0, 1, 1)
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setEnabled(False)
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout_2.addWidget(self.pushButton, 2, 0, 1, 1)
         self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
         self.groupBox_2.setObjectName("groupBox_2")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.groupBox_2)
@@ -38,6 +34,13 @@ class Ui_MainWindow(object):
         self.comboBox_2.setObjectName("comboBox_2")
         self.gridLayout_3.addWidget(self.comboBox_2, 0, 0, 1, 1)
         self.gridLayout_2.addWidget(self.groupBox_2, 1, 0, 1, 1)
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setEnabled(False)
+        self.pushButton.setObjectName("pushButton")
+        self.gridLayout_2.addWidget(self.pushButton, 2, 0, 1, 1)
+        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.gridLayout_2.addWidget(self.pushButton_2, 3, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 39))
@@ -53,6 +56,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QtWidgets.QApplication.translate("MainWindow", "Mic Recorder", None, -1))
         self.groupBox.setTitle(QtWidgets.QApplication.translate("MainWindow", "Interfaces", None, -1))
-        self.pushButton.setText(QtWidgets.QApplication.translate("MainWindow", "Record", None, -1))
         self.groupBox_2.setTitle(QtWidgets.QApplication.translate("MainWindow", "Rates (Hz)", None, -1))
+        self.pushButton.setText(QtWidgets.QApplication.translate("MainWindow", "Record", None, -1))
+        self.pushButton_2.setText(QtWidgets.QApplication.translate("MainWindow", "Stop", None, -1))
 

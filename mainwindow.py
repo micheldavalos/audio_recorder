@@ -25,10 +25,13 @@ class MainWindow(QMainWindow):
             self.ui.pushButton.setEnabled(True)
 
         self.ui.pushButton.clicked.connect(self.record)
-
+        self.ui.pushButton_2.clicked.connect(self.stop)
 
     def record(self, index):
-        pass
+        self.recorder.record()
+
+    def stop(self):
+        self.recorder.stop()
 
     @Slot(int)
     def update_rates(self, index):
