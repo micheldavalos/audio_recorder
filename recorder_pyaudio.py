@@ -8,6 +8,7 @@ class RecorderPyAudio(QThread):
     _recfile = None
     _recording = False
     _index = 0
+    _location = 'output.wav'
 
     def __init__(self):
         super(RecorderPyAudio, self).__init__()
@@ -37,8 +38,9 @@ class RecorderPyAudio(QThread):
     def default(self):
         return self._devices[0]
 
-    def start_recording(self, index):
+    def start_recording(self, index, location='output.wav'):
         self._index = index
+        self._location = location
 
         self.start()
 
@@ -55,7 +57,7 @@ class RecorderPyAudio(QThread):
 
         self._rec = Recorder(channels=2, rate=int(device.rate), index=device.index)
 
-        with self._rec.open('output.wav', 'wb') as recfile:
+        with self._rec.open(self._location, 'wb') as recfile:
             recfile.start_recording()
 
             self._recording = True
