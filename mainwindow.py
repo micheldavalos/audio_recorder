@@ -28,15 +28,22 @@ class MainWindow(QMainWindow):
         #
         if self.ui.comboBox.count():
             self.ui.pushButton.setEnabled(True)
+        self.ui.pushButton_2.setEnabled(False)
         #
-        # self.ui.pushButton.clicked.connect(self.record)
-        # self.ui.pushButton_2.clicked.connect(self.stop)
+        self.ui.pushButton.clicked.connect(self.record)
+        self.ui.pushButton_2.clicked.connect(self.stop)
 
-    def record(self, index):
-        self.recorder.record()
+    def record(self):
+        self.recorder.start_recording(self.ui.comboBox.currentIndex())
+        self.ui.pushButton.setEnabled(False)
+        self.ui.pushButton_2.setEnabled(True)
+
 
     def stop(self):
-        self.recorder.stop()
+        self.recorder.stop_recording()
+        self.ui.pushButton.setEnabled(True)
+        self.ui.pushButton_2.setEnabled(False)
+
 
     @Slot(int)
     def update_rates(self, index):
