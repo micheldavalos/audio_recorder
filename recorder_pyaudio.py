@@ -4,6 +4,8 @@ import wave
 
 class RecorderPyAudio:
     _devices = []
+    _rec = None
+    _recfile = None
 
     def __init__(self):
         pass
@@ -34,10 +36,15 @@ class RecorderPyAudio:
         return self._devices[0]
 
     def start_recording(self, index):
-        pass
+        device = self._devices[index]
+
+        self._rec = Recorder(channels=2, range = int(device.rate))
+
+        with self._rec.open('output.wav', 'wb') as self._recfile:
+            self._recfile.start_recording()
 
     def stop_recording(self, index):
-        pass
+        self._recfile.stop_recording()
 
 
 class Device:

@@ -26,8 +26,8 @@ class MainWindow(QMainWindow):
 
         #
         #
-        # if self.ui.comboBox.count():
-        #     self.ui.pushButton.setEnabled(True)
+        if self.ui.comboBox.count():
+            self.ui.pushButton.setEnabled(True)
         #
         # self.ui.pushButton.clicked.connect(self.record)
         # self.ui.pushButton_2.clicked.connect(self.stop)
