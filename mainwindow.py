@@ -2,7 +2,7 @@ from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import Slot
 from ui_mainwindow import Ui_MainWindow
 # from recorder import Recorder
-from recorder_pyaudio import Recorder
+from recorder_pyaudio import RecorderPyAudio
 
 
 class MainWindow(QMainWindow):
@@ -13,7 +13,7 @@ class MainWindow(QMainWindow):
 
 
 
-        self.recorder = Recorder()
+        self.recorder = RecorderPyAudio()
 
         for device in self.recorder.devices():
             self.ui.comboBox.addItem(device.deviceName())
